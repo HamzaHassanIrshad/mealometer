@@ -95,7 +95,9 @@ const FoodSelector = ({ foods, onChange }) => {
           <p>Drag and drop an image here, or click to select a file</p>
         )}
         {selectedFile && <p>{selectedFile.name}</p>}
-        <button onClick={handleUpload}>Upload Image</button>
+        <button className="reusable-button" onClick={handleUpload}>
+          Upload Image
+        </button>
       </div>
     </div>
   );

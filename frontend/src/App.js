@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { from } from "rxjs";
 import { map } from "rxjs/operators";
 import MacroNutrients from "./components/macro-nutrients";
-import MicroNutrients from "./components/micro-nutrients";
+import NutrientTable from "./components/nutrient-table";
 import Foods from "./components/foods";
-import {
-  calculateMacroNutrients,
-  calculateMicroNutrients,
-} from "./components/calculations";
+import { calculateMacroNutrients } from "./components/calculations";
 import logo from "./images/logo.png";
 
 // Datasets
@@ -28,10 +25,6 @@ export default class App extends Component {
   updateNutrients = (selectedFoods$) => {
     this.setState({
       macroNutrients: calculateMacroNutrients(selectedFoods$),
-      // microNutrients: calculateMicroNutrients(
-      //   selectedFoods$,
-      //   this.nutrientsLimited$
-      // ),
     });
   };
 
@@ -46,10 +39,7 @@ export default class App extends Component {
         </div>
         <div className="rightPanel">
           <MacroNutrients macroNutrients={this.state.macroNutrients} />
-          {/* <MicroNutrients
-            definitions={nutrients}
-            microNutrients={this.state.microNutrients}
-          /> */}
+          <NutrientTable foodEntries={this.state.foodEntries} />
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
-import React from 'react';
-import { InputNumber, Button, Icon } from 'antd';
+import React from "react";
+import { InputNumber, Button, Icon } from "antd";
 
 const SelectedFood = ({ onChange, onRemove, selectedFood }) => {
   const onAmountChange = (amount) => {

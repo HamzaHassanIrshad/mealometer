@@ -250,10 +250,6 @@ input[type="number"] {
   color: gray;
 }
 
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-
 @keyframes octocat-wave {
   0%,
   100% {
@@ -271,16 +267,6 @@ input[type="number"] {
   }
 }
 
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-
 .upload-container {
   display: flex;
   flex-direction: column;
@@ -292,7 +278,7 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.upload-container button {
+.reusable-button {
   padding: 10px 20px;
   background-color: #f5675a;
   color: white;
@@ -302,6 +288,6 @@ input[type="number"] {
   transition: background-color 0.3s ease;
 }
 
-.upload-container button:hover {
+.reusable-button:hover {
   background-color: #fd7e73;
 }

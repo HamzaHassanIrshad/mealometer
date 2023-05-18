@@ -80,6 +80,9 @@ const Foods = ({ updateNutrients }) => {
           onRemove={onFoodRemove}
         />
       ))}
+      {selectedFoods.length > 0 && (
+        <button className="reusable-button">Add Food Entry</button>
+      )}
     </div>
   );
 };

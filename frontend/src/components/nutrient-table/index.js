@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Table } from "antd";
 
 const NutrientTable = () => {
-  const [foodEntries, setFoodEntries] = useState([]);
-
   const columns = [
     {
       title: "Food Name",
@@ -35,7 +33,7 @@ const NutrientTable = () => {
   return (
     <div className="nutrientTable">
       <h3>Nutrient Table</h3>
-      <Table dataSource={foodEntries} columns={columns} />
+      <Table columns={columns} />
     </div>
   );
 };

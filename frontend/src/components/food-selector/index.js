@@ -30,7 +30,7 @@ const FoodSelector = ({ foods, onChange }) => {
 
   const handleChange = (value) => {
     onChange(value);
-    setSelectedFood(undefined);
+    setSelectedFood(null);
   };
 
   const filterOption = (input, option) =>

@@ -25,8 +25,6 @@ export const defaultMacroNutrients = {
   },
 };
 
-const percentage = (amount, total) => parseInt((amount * 100) / total, 10);
-
 export const calculateMacroNutrients = (selectedFoods$) => {
   const macroNutrients = JSON.parse(JSON.stringify(defaultMacroNutrients));
   selectedFoods$.subscribe(
@@ -75,60 +73,4 @@ export const unitize = (amount, units) => {
     amount: parseFloat(parseFloat(amount).toFixed(2)),
     unit,
   };
-};
-
-const getMicroNutrientsDefaults = (nutrients$) => {
-  const microNutrients = {};
-  nutrients$.subscribe(
-    (nutrient) => {
-      if (!microNutrients[nutrient.name]) {
-        microNutrients[nutrient.name] = {
-          rda: nutrient.rda,
-          raw: 0,
-          amount: 0,
-          unit: "μg",
-          percentage: 0,
-        };
-      }
-    },
-    (err) => console.log(err),
-    () => {}
-  );
-  return microNutrients;
-};
-
-export const calculateMicroNutrients = (selectedFoods$, nutrients$) => {
-  const microNutrients = getMicroNutrientsDefaults(nutrients$);
-
-  selectedFoods$.subscribe((selectedFood) => {
-    nutrients$.subscribe(
-      (nutrient) => {
-        const foodNutrients = selectedFood.food.nutrients[nutrient.name];
-        microNutrients[nutrient.name].raw +=
-          (foodNutrients || 0) * selectedFood.amount;
-      },
-      (err) => console.error(err),
-      () => {
-        nutrients$.subscribe((nutrient) => {
-          microNutrients[nutrient.name].percentage = percentage(
-            microNutrients[nutrient.name].raw,
-            nutrient.rda
-          );
-          microNutrients[nutrient.name].raw = parseInt(
-            microNutrients[nutrient.name].raw,
-            10
-          );
-          const r = unitize(microNutrients[nutrient.name].raw, [
-            "g",
-            "mg",
-            "μg",
-          ]);
-          microNutrients[nutrient.name].amount = r.amount;
-          microNutrients[nutrient.name].unit = r.unit;
-        });
-      }
-    );
-  });
-
-  return microNutrients;
 };

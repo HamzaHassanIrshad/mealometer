@@ -70,7 +70,7 @@ const Foods = ({ updateNutrients }) => {
         </div>
       )}
       {selectedFoods.length > 0 && (
-        <h3 className="selectedFoodsLabel"> Selected foods </h3>
+        <h3 className="selectedFoodsLabel"> Selected Foods </h3>
       )}
       {selectedFoods.map((selectedFood) => (
         <SelectedFood

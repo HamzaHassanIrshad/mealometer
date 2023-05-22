@@ -286,6 +286,7 @@ input[type="number"] {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
 .reusable-button:hover {

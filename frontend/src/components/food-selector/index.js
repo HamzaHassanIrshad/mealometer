@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Select } from "antd";
+import { Select, Spin } from "antd";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
 
 const FoodSelector = ({ foods, onChange }) => {
   const [selectedFood, setSelectedFood] = useState();
   const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleUpload = async () => {
     if (!selectedFile) {
@@ -17,14 +18,18 @@ const FoodSelector = ({ foods, onChange }) => {
     formData.append("image", selectedFile);
 
     try {
-      await axios.post("/", formData, {
+      setLoading(true);
+      const res = await axios.post("http://localhost:5000/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("Image uploaded successfully");
+      console.log("Predicted class:", res.data);
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.error("Error uploading image:", error, selectedFile);
+    } finally {
+      setLoading(false);
+      setSelectedFile(null);
     }
   };
 
@@ -95,10 +100,15 @@ const FoodSelector = ({ foods, onChange }) => {
           <p>Drag and drop an image here, or click to select a file</p>
         )}
         {selectedFile && <p>{selectedFile.name}</p>}
+      </div>
+      {loading ? (
+        <Spin style={{ marginTop: "15px" }} size="large" />
+      ) : (
+        // Upload Image button outside the dropzone
         <button className="reusable-button" onClick={handleUpload}>
           Upload Image
         </button>
-      </div>
+      )}
     </div>
   );
 };

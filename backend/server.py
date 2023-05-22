@@ -10,11 +10,11 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the image classification model
-with open('model.pkl', 'rb') as file:
+with open('./model/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Load the class names
-with open('classes.txt', 'r') as file:
+with open('./data/classes.txt', 'r') as file:
     classes = [line.strip() for line in file.readlines()]
 
 # Preprocess the image

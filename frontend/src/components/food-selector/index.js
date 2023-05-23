@@ -6,6 +6,7 @@ import { useDropzone } from "react-dropzone";
 const FoodSelector = ({ foods, onChange }) => {
   const [selectedFood, setSelectedFood] = useState();
   const [selectedFile, setSelectedFile] = useState(null);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleUpload = async () => {
@@ -24,9 +25,16 @@ const FoodSelector = ({ foods, onChange }) => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("Predicted class:", res.data);
+      if (res.data.class === "non_food") {
+        setError("The uploaded image does not contain food.");
+      } else {
+        setError(null);
+        console.log("Predicted class:", res.data);
+        onChange(res.data.class);
+      }
     } catch (error) {
       console.error("Error uploading image:", error, selectedFile);
+      setError("An error occurred while uploading the image.");
     } finally {
       setLoading(false);
       setSelectedFile(null);
@@ -35,7 +43,7 @@ const FoodSelector = ({ foods, onChange }) => {
 
   const handleChange = (value) => {
     onChange(value);
-    setSelectedFood(null);
+    setSelectedFood(value);
   };
 
   const filterOption = (input, option) =>
@@ -45,18 +53,18 @@ const FoodSelector = ({ foods, onChange }) => {
     onDrop: (acceptedFiles) => {
       const file = acceptedFiles[0];
       if (file) {
-        const fileTypes = ["image/jpeg", "image/jpg", "image/png"];
+        const fileTypes = ["image/jpeg", "image/jpg"];
         const fileType = file.type;
         if (fileTypes.includes(fileType)) {
           setSelectedFile(file);
         } else {
           console.log(
-            "Invalid file type. Please select a JPG, JPEG, or PNG file."
+            "Invalid file type. Please select a JPG or JPEG file only."
           );
         }
       }
     },
-    multiple: false, // Limit to one image at a time
+    multiple: false,
   });
 
   return (
@@ -108,6 +116,11 @@ const FoodSelector = ({ foods, onChange }) => {
         <button className="reusable-button" onClick={handleUpload}>
           Upload Image
         </button>
+      )}
+      {error && (
+        <p className="error" style={{ marginTop: "15px", color: "red" }}>
+          {error}
+        </p>
       )}
     </div>
   );

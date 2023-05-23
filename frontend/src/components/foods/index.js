@@ -9,8 +9,18 @@ import { from } from "rxjs";
 const Foods = ({ updateNutrients }) => {
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [foodsForSelection, setFoodsForSelection] = useState([]);
+  const [error, setError] = useState("");
 
   const onFoodSelect = (selectedFoodName) => {
+    // Check if the selected food item is already in the selectedFoods array
+    const existingFood = selectedFoods.find(
+      (f) => f.food.name === selectedFoodName
+    );
+    if (existingFood) {
+      setError("Food item already selected");
+      return;
+    }
+
     setSelectedFoods((prevSelectedFoods) => [
       ...prevSelectedFoods,
       {
@@ -18,6 +28,7 @@ const Foods = ({ updateNutrients }) => {
         amount: foods.find((f) => f.name === selectedFoodName).serving || 100,
       },
     ]);
+    setError("");
   };
 
   const onFoodRemove = (removedFood) => {
@@ -68,6 +79,11 @@ const Foods = ({ updateNutrients }) => {
         <div className="addFoods">
           <Icon className="animate-flicker" type="arrow-up" />
         </div>
+      )}
+      {error && (
+        <p className="error-message" style={{ color: "red" }}>
+          {error}
+        </p>
       )}
       {selectedFoods.length > 0 && (
         <h3 className="selectedFoodsLabel"> Selected Foods </h3>

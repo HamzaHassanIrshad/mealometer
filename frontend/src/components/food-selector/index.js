@@ -4,14 +4,13 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 
 const FoodSelector = ({ foods, onChange }) => {
-  const [selectedFood, setSelectedFood] = useState();
   const [selectedFile, setSelectedFile] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleUpload = async () => {
     if (!selectedFile) {
-      console.log("No file selected");
+      setError("No file selected");
       return;
     }
 
@@ -28,7 +27,7 @@ const FoodSelector = ({ foods, onChange }) => {
       if (res.data.class === "non_food") {
         setError("The uploaded image does not contain food.");
       } else {
-        setError(null);
+        setError("");
         console.log("Predicted class:", res.data);
         onChange(res.data.class);
       }
@@ -43,7 +42,6 @@ const FoodSelector = ({ foods, onChange }) => {
 
   const handleChange = (value) => {
     onChange(value);
-    setSelectedFood(value);
   };
 
   const filterOption = (input, option) =>
@@ -58,9 +56,7 @@ const FoodSelector = ({ foods, onChange }) => {
         if (fileTypes.includes(fileType)) {
           setSelectedFile(file);
         } else {
-          console.log(
-            "Invalid file type. Please select a JPG or JPEG file only."
-          );
+          setError("Invalid file type. Please select a JPG or JPEG file only.");
         }
       }
     },
@@ -75,7 +71,6 @@ const FoodSelector = ({ foods, onChange }) => {
         showSearch
         className="foodSelectorInput"
         size="large"
-        value={selectedFood}
         placeholder="+ Add food"
         optionFilterProp="children"
         onChange={handleChange}

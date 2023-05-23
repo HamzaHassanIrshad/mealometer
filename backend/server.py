@@ -98,8 +98,16 @@ def classify_image():
     # Perform classification
     predicted_label, predicted_probability = predict(processed_image, model)
 
+    # Determine if it's a food image or non-food image based on the predicted probability
+    if predicted_probability > 50:
+        result = {'class': predicted_label,
+                  'probability': predicted_probability}
+    else:
+        non_food_probability = 100.0 - predicted_probability
+        result = {'class': 'non_food', 'probability': non_food_probability}
+
     # Return the prediction as JSON
-    return jsonify({'class': predicted_label, 'probability': predicted_probability})
+    return jsonify(result)
 
 
 if __name__ == '__main__':

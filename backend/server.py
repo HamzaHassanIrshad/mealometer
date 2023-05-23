@@ -4,7 +4,6 @@ from flask_cors import CORS
 import pickle
 import torch
 import numpy as np
-import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 CORS(app)
@@ -21,17 +20,36 @@ with open('./data/classes.txt', 'r') as file:
 
 
 def process_image(image):
-    # Resize the image to 224x224 pixels
-    image = image.resize((224, 224))
+    # Get the dimensions of the image
+    width, height = image.size
+
+    # Resize the image while maintaining the aspect ratio, with the shorter side resized to 255 pixels
+    image = image.resize((255, int(255 * (height / width)))
+                         if width < height else (int(255 * (width / height)), 255))
+
+    # Get the dimensions of the new image size
+    width, height = image.size
+
+    # Set the coordinates to do a center crop of 224 x 224
+    left = (width - 224) / 2
+    top = (height - 224) / 2
+    right = (width + 224) / 2
+    bottom = (height + 224) / 2
+    image = image.crop((left, top, right, bottom))
 
     # Convert the image to a NumPy array
     image_array = np.array(image)
 
-    # Normalize the image
-    normalized_image = image_array / 255.0
+    # Make all values between 0 and 1
+    image_array = image_array / 255.0
+
+    # Normalize the image based on preset mean and standard deviation values
+    image_array[:, :, 0] = (image_array[:, :, 0] - 0.485) / 0.229
+    image_array[:, :, 1] = (image_array[:, :, 1] - 0.456) / 0.224
+    image_array[:, :, 2] = (image_array[:, :, 2] - 0.406) / 0.225
 
     # Convert the image to a PyTorch tensor
-    tensor_image = torch.from_numpy(normalized_image).permute(2, 0, 1).float()
+    tensor_image = torch.from_numpy(image_array).permute(2, 0, 1).float()
 
     # Add a batch dimension
     tensor_image = tensor_image.unsqueeze(0)
@@ -63,7 +81,6 @@ def predict(image, model):
                                               predicted_indices].item() * 100.0
 
     return predicted_label, predicted_probability
-
 
 # Route for image classification
 

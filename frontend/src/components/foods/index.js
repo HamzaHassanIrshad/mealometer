@@ -75,15 +75,15 @@ const Foods = ({ updateNutrients }) => {
         foods={foodsForSelection}
         onChange={onFoodSelect}
       />
-      {selectedFoods.length === 0 && (
-        <div className="addFoods">
-          <Icon className="animate-flicker" type="arrow-up" />
-        </div>
-      )}
       {error && (
         <p className="error-message" style={{ color: "red" }}>
           {error}
         </p>
+      )}
+      {selectedFoods.length === 0 && (
+        <div className="addFoods">
+          <Icon className="animate-flicker" type="arrow-up" />
+        </div>
       )}
       {selectedFoods.length > 0 && (
         <h3 className="selectedFoodsLabel"> Selected Foods </h3>
@@ -97,7 +97,12 @@ const Foods = ({ updateNutrients }) => {
         />
       ))}
       {selectedFoods.length > 0 && (
-        <button className="reusable-button">Add Food Entry</button>
+        <button
+          className="reusable-button"
+          style={{ marginBottom: "15px", marginTop: "2px" }}
+        >
+          Add Food Entry
+        </button>
       )}
     </div>
   );

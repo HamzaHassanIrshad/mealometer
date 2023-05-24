@@ -4,6 +4,7 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 
 const FoodSelector = ({ foods, onChange }) => {
+  const [selectedFood, setSelectedFood] = useState(undefined);
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -42,6 +43,7 @@ const FoodSelector = ({ foods, onChange }) => {
 
   const handleChange = (value) => {
     onChange(value);
+    setSelectedFood(undefined);
   };
 
   const filterOption = (input, option) =>
@@ -67,10 +69,10 @@ const FoodSelector = ({ foods, onChange }) => {
     <div className="foodSelector">
       <Select
         spellCheck="false"
-        data-gramm="false"
         showSearch
         className="foodSelectorInput"
         size="large"
+        value={selectedFood}
         placeholder="+ Add food"
         optionFilterProp="children"
         onChange={handleChange}
@@ -100,7 +102,7 @@ const FoodSelector = ({ foods, onChange }) => {
             />
           </div>
         ) : (
-          <p>Drag and drop an image here, or click to select a file</p>
+          <p>Drag and drop a food image here, or click to select an image</p>
         )}
         {selectedFile && <p>{selectedFile.name}</p>}
       </div>

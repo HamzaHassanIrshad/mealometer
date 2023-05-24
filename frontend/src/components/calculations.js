@@ -25,52 +25,39 @@ export const defaultMacroNutrients = {
   },
 };
 
+const formatMacroNutrient = (macroNutrient, unit) => {
+  const formattedAmount = parseFloat(macroNutrient.toFixed(2));
+  return {
+    name: defaultMacroNutrients[unit].name,
+    amount: formattedAmount,
+    unit: defaultMacroNutrients[unit].unit,
+  };
+};
+
 export const calculateMacroNutrients = (selectedFoods$) => {
-  const macroNutrients = JSON.parse(JSON.stringify(defaultMacroNutrients));
+  const macroNutrients = { ...defaultMacroNutrients };
+
+  let calories = 0;
+  let proteins = 0;
+  let carbs = 0;
+  let fats = 0;
+
   selectedFoods$.subscribe(
     (selectedFood) => {
       selectedFood.amount = selectedFood.amount || 0;
-      macroNutrients.calories.raw +=
-        selectedFood.food.calories * selectedFood.amount;
-      macroNutrients.proteins.raw +=
-        selectedFood.food.proteins * selectedFood.amount;
-      macroNutrients.carbs.raw +=
-        selectedFood.food.carbohydrates * selectedFood.amount;
-      macroNutrients.fats.raw += selectedFood.food.fat * selectedFood.amount;
+      calories += selectedFood.food.calories * selectedFood.amount;
+      proteins += selectedFood.food.proteins * selectedFood.amount;
+      carbs += selectedFood.food.carbohydrates * selectedFood.amount;
+      fats += selectedFood.food.fat * selectedFood.amount;
     },
     (err) => console.error(err),
     () => {
-      macroNutrients.calories = formatMacroNutrient(macroNutrients.calories, [
-        "kcal",
-      ]);
-      macroNutrients.proteins = formatMacroNutrient(macroNutrients.proteins, [
-        "g",
-      ]);
-      macroNutrients.carbs = formatMacroNutrient(macroNutrients.carbs, ["g"]);
-      macroNutrients.fats = formatMacroNutrient(macroNutrients.fats, ["g"]);
+      macroNutrients.calories = formatMacroNutrient(calories, "calories");
+      macroNutrients.proteins = formatMacroNutrient(proteins, "proteins");
+      macroNutrients.carbs = formatMacroNutrient(carbs, "carbs");
+      macroNutrients.fats = formatMacroNutrient(fats, "fats");
     }
   );
 
   return macroNutrients;
-};
-
-const formatMacroNutrient = (macroNutrient, units) =>
-  Object.assign(macroNutrient, unitize(macroNutrient.raw, units));
-
-export const unitize = (amount, units) => {
-  let unit = units.pop();
-  while (amount >= 1000) {
-    if (units.length === 0) {
-      return {
-        amount: parseFloat(parseFloat(amount).toFixed(2)),
-        unit,
-      };
-    }
-    amount /= 1000;
-    unit = units.pop();
-  }
-  return {
-    amount: parseFloat(parseFloat(amount).toFixed(2)),
-    unit,
-  };
 };

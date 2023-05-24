@@ -17,7 +17,7 @@ const Foods = ({ updateNutrients }) => {
       (f) => f.food.name === selectedFoodName
     );
     if (existingFood) {
-      setError("Food item already selected");
+      setError("Food item already selected.");
       return;
     }
 

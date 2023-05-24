@@ -22,7 +22,7 @@ const MacroNutrients = ({
       <MacroPieChart
         proteins={initialMacroNutrients.proteins.amount}
         carbohydrates={initialMacroNutrients.carbs.amount}
-        fat={initialMacroNutrients.fats.amount}
+        fats={initialMacroNutrients.fats.amount}
       />
     </div>
   );

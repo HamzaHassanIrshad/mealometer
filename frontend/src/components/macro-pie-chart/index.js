@@ -6,18 +6,18 @@ import emptyGraph from "./../../images/graph_placeholder.png";
 
 ReactChartkick.addAdapter(Chart);
 
-const MacroPieChart = ({ proteins, carbohydrates, fat }) => {
+const MacroPieChart = ({ proteins, carbohydrates, fats }) => {
   const calculatePercentage = (item, total) =>
     parseInt((item * 100) / total, 10) || 0;
 
-  const getTotalMacroNutrients = () => proteins + carbohydrates + fat;
+  const getTotalMacroNutrients = () => proteins + carbohydrates + fats;
 
   const pieChartData = () => {
     const total = getTotalMacroNutrients();
     return [
       ["Proteins", calculatePercentage(proteins, total)],
       ["Carbs", calculatePercentage(carbohydrates, total)],
-      ["Fat", calculatePercentage(fat, total)],
+      ["Fats", calculatePercentage(fats, total)],
     ];
   };
 

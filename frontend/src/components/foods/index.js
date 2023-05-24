@@ -9,7 +9,7 @@ import { from } from "rxjs";
 const Foods = ({ updateNutrients }) => {
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [foodsForSelection, setFoodsForSelection] = useState([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
 
   const onFoodSelect = (selectedFoodName) => {
     // Check if the selected food item is already in the selectedFoods array
@@ -17,7 +17,7 @@ const Foods = ({ updateNutrients }) => {
       (f) => f.food.name === selectedFoodName
     );
     if (existingFood) {
-      setError("Food item already selected.");
+      setError(true);
       return;
     }
 
@@ -28,7 +28,7 @@ const Foods = ({ updateNutrients }) => {
         amount: foods.find((f) => f.name === selectedFoodName).serving || 100,
       },
     ]);
-    setError("");
+    setError(false);
   };
 
   const onFoodRemove = (removedFood) => {
@@ -77,7 +77,7 @@ const Foods = ({ updateNutrients }) => {
       />
       {error && (
         <p className="error-message" style={{ color: "red" }}>
-          {error}
+          Food item already selected.
         </p>
       )}
       {selectedFoods.length === 0 && (

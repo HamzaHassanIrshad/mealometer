@@ -3,7 +3,7 @@
     "name": "Apple Pie",
     "calories": 2.65,
     "proteins": 0.024,
-    "fat": 0.125,
+    "fats": 0.125,
     "carbohydrates": 0.371,
     "serving": 100
   },
@@ -11,7 +11,7 @@
     "name": "Baby Back Ribs",
     "calories": 2.24,
     "proteins": 0.1907,
-    "fat": 0.16329999999999997,
+    "fats": 0.16329999999999997,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -19,7 +19,7 @@
     "name": "Baklava",
     "calories": 4.3,
     "proteins": 0.071,
-    "fat": 0.252,
+    "fats": 0.252,
     "carbohydrates": 0.457,
     "serving": 100
   },
@@ -27,7 +27,7 @@
     "name": "Beef Carpaccio",
     "calories": 1.3,
     "proteins": 0.2164,
-    "fat": 0.0481,
+    "fats": 0.0481,
     "carbohydrates": 0.0012,
     "serving": 100
   },
@@ -35,7 +35,7 @@
     "name": "Beef Tartare",
     "calories": 1.3,
     "proteins": 0.2164,
-    "fat": 0.0481,
+    "fats": 0.0481,
     "carbohydrates": 0.0012,
     "serving": 100
   },
@@ -43,7 +43,7 @@
     "name": "Beet Salad",
     "calories": 0.43,
     "proteins": 0.0161,
-    "fat": 0.0017000000000000001,
+    "fats": 0.0017000000000000001,
     "carbohydrates": 0.0956,
     "serving": 100
   },
@@ -51,7 +51,7 @@
     "name": "Beignets",
     "calories": 3.3808946845840295,
     "proteins": 0.06043661836764259,
-    "fat": 0.17367589327918367,
+    "fats": 0.17367589327918367,
     "carbohydrates": 0.3957327383191576,
     "serving": 100
   },
@@ -59,7 +59,7 @@
     "name": "Bibimbap",
     "calories": 1.532287248985012,
     "proteins": 0.061828476564575165,
-    "fat": 0.07076935407641041,
+    "fats": 0.07076935407641041,
     "carbohydrates": 0.16423811001630825,
     "serving": 100
   },
@@ -67,7 +67,7 @@
     "name": "Bread Pudding",
     "calories": 2.67,
     "proteins": 0.1072,
-    "fat": 0.032400000000000005,
+    "fats": 0.032400000000000005,
     "carbohydrates": 0.4868,
     "serving": 100
   },
@@ -75,7 +75,7 @@
     "name": "Breakfast Burrito",
     "calories": 1.88,
     "proteins": 0.05289999961853027,
-    "fat": 0.08239999771118164,
+    "fats": 0.08239999771118164,
     "carbohydrates": 0.22350000381469726,
     "serving": 100
   },
@@ -83,7 +83,7 @@
     "name": "Bruschetta",
     "calories": 1.57822943786805,
     "proteins": 0.049790473478784715,
-    "fat": 0.07626676983576153,
+    "fats": 0.07626676983576153,
     "carbohydrates": 0.17975530471687517,
     "serving": 100
   },
@@ -91,7 +91,7 @@
     "name": "Caesar Salad",
     "calories": 1.9688653702604861,
     "proteins": 0.058026187936883494,
-    "fat": 0.15897843225485497,
+    "fats": 0.15897843225485497,
     "carbohydrates": 0.08549516406946528,
     "serving": 100
   },
@@ -99,7 +99,7 @@
     "name": "Cannoli",
     "calories": 3.4501118523062178,
     "proteins": 0.06370803548878243,
-    "fat": 0.2138974049371619,
+    "fats": 0.2138974049371619,
     "carbohydrates": 0.31545418264743025,
     "serving": 100
   },
@@ -107,7 +107,7 @@
     "name": "Caprese Salad",
     "calories": 1.5146319580228416,
     "proteins": 0.07560627235210385,
-    "fat": 0.11436627079162377,
+    "fats": 0.11436627079162377,
     "carbohydrates": 0.05049750017060876,
     "serving": 100
   },
@@ -115,7 +115,7 @@
     "name": "Carrot Cake",
     "calories": 4.15,
     "proteins": 0.051,
-    "fat": 0.098,
+    "fats": 0.098,
     "carbohydrates": 0.792,
     "serving": 100
   },
@@ -123,7 +123,7 @@
     "name": "Ceviche",
     "calories": 0.6817617689539393,
     "proteins": 0.0746065645312683,
-    "fat": 0.022950705233836414,
+    "fats": 0.022950705233836414,
     "carbohydrates": 0.05545813598048413,
     "serving": 100
   },
@@ -131,7 +131,7 @@
     "name": "Cheesecake",
     "calories": 3.21,
     "proteins": 0.055,
-    "fat": 0.225,
+    "fats": 0.225,
     "carbohydrates": 0.255,
     "serving": 100
   },
@@ -139,7 +139,7 @@
     "name": "Cheese Plate",
     "calories": 4.06,
     "proteins": 0.2404,
-    "fat": 0.3382,
+    "fats": 0.3382,
     "carbohydrates": 0.013300000000000001,
     "serving": 100
   },
@@ -147,7 +147,7 @@
     "name": "Chicken Curry",
     "calories": 2.15,
     "proteins": 0.18600000000000003,
-    "fat": 0.1506,
+    "fats": 0.1506,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -155,7 +155,7 @@
     "name": "Chicken Quesadilla",
     "calories": 2.94,
     "proteins": 0.1505,
-    "fat": 0.1525,
+    "fats": 0.1525,
     "carbohydrates": 0.2404,
     "serving": 100
   },
@@ -163,7 +163,7 @@
     "name": "Chicken Wings",
     "calories": 1.91,
     "proteins": 0.1752,
-    "fat": 0.1316,
+    "fats": 0.1316,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -171,7 +171,7 @@
     "name": "Chocolate Cake",
     "calories": 3.71,
     "proteins": 0.053,
-    "fat": 0.151,
+    "fats": 0.151,
     "carbohydrates": 0.534,
     "serving": 100
   },
@@ -179,7 +179,7 @@
     "name": "Chocolate Mousse",
     "calories": 2.25,
     "proteins": 0.0414,
-    "fat": 0.16,
+    "fats": 0.16,
     "carbohydrates": 0.1607,
     "serving": 100
   },
@@ -187,7 +187,7 @@
     "name": "Churros",
     "calories": 3.358772198344941,
     "proteins": 0.03613634070335743,
-    "fat": 0.24057751751703266,
+    "fats": 0.24057751751703266,
     "carbohydrates": 0.2724889827094808,
     "serving": 100
   },
@@ -195,7 +195,7 @@
     "name": "Clam Chowder",
     "calories": 0.86,
     "proteins": 0.1467,
-    "fat": 0.0096,
+    "fats": 0.0096,
     "carbohydrates": 0.035699999999999996,
     "serving": 100
   },
@@ -203,7 +203,7 @@
     "name": "Club Sandwich",
     "calories": 2.82,
     "proteins": 0.10260000228881835,
-    "fat": 0.17950000762939453,
+    "fats": 0.17950000762939453,
     "carbohydrates": 0.1965999984741211,
     "serving": 100
   },
@@ -211,7 +211,7 @@
     "name": "Crab Cakes",
     "calories": 2.66,
     "proteins": 0.1875,
-    "fat": 0.1725,
+    "fats": 0.1725,
     "carbohydrates": 0.0852,
     "serving": 100
   },
@@ -219,7 +219,7 @@
     "name": "Creme Brulee",
     "calories": 2.945551699495963,
     "proteins": 0.032557375726369055,
-    "fat": 0.24375188705124629,
+    "fats": 0.24375188705124629,
     "carbohydrates": 0.16622630659055818,
     "serving": 100
   },
@@ -227,7 +227,7 @@
     "name": "Croque Madame",
     "calories": 2.345065628634701,
     "proteins": 0.12186853485572433,
-    "fat": 0.14276846263186851,
+    "fats": 0.14276846263186851,
     "carbohydrates": 0.14292957358681524,
     "serving": 100
   },
@@ -235,7 +235,7 @@
     "name": "Cup Cakes",
     "calories": 7.17,
     "proteins": 0.0085,
-    "fat": 0.8111,
+    "fats": 0.8111,
     "carbohydrates": 0.0006,
     "serving": 100
   },
@@ -243,7 +243,7 @@
     "name": "Deviled Eggs",
     "calories": 1.43,
     "proteins": 0.12560000000000002,
-    "fat": 0.0951,
+    "fats": 0.0951,
     "carbohydrates": 0.0072,
     "serving": 100
   },
@@ -251,7 +251,7 @@
     "name": "Donuts",
     "calories": 4.21,
     "proteins": 0.061399999999999996,
-    "fat": 0.22699999999999998,
+    "fats": 0.22699999999999998,
     "carbohydrates": 0.4793,
     "serving": 100
   },
@@ -259,7 +259,7 @@
     "name": "Dumplings",
     "calories": 2.1973550142310962,
     "proteins": 0.07837222156069915,
-    "fat": 0.0691653819212483,
+    "fats": 0.0691653819212483,
     "carbohydrates": 0.31049580784690334,
     "serving": 100
   },
@@ -267,7 +267,7 @@
     "name": "Edamame",
     "calories": 1.1,
     "proteins": 0.1025,
-    "fat": 0.0473,
+    "fats": 0.0473,
     "carbohydrates": 0.0858,
     "serving": 100
   },
@@ -275,7 +275,7 @@
     "name": "Eggs Benedict",
     "calories": 1.43,
     "proteins": 0.12560000000000002,
-    "fat": 0.0951,
+    "fats": 0.0951,
     "carbohydrates": 0.0072,
     "serving": 100
   },
@@ -283,7 +283,7 @@
     "name": "Escargots",
     "calories": 0.9,
     "proteins": 0.161,
-    "fat": 0.013999999999999999,
+    "fats": 0.013999999999999999,
     "carbohydrates": 0.02,
     "serving": 100
   },
@@ -291,7 +291,7 @@
     "name": "Falafel",
     "calories": 3.33,
     "proteins": 0.1331,
-    "fat": 0.17800000000000002,
+    "fats": 0.17800000000000002,
     "carbohydrates": 0.3184,
     "serving": 100
   },
@@ -299,7 +299,7 @@
     "name": "Filet Mignon",
     "calories": 2.46,
     "proteins": 0.19820000000000002,
-    "fat": 0.1788,
+    "fats": 0.1788,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -307,7 +307,7 @@
     "name": "Fish And Chips",
     "calories": 0.96,
     "proteins": 0.20079999999999998,
-    "fat": 0.017,
+    "fats": 0.017,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -315,7 +315,7 @@
     "name": "Foie Gras",
     "calories": 4.62,
     "proteins": 0.114,
-    "fat": 0.4384,
+    "fats": 0.4384,
     "carbohydrates": 0.0467,
     "serving": 100
   },
@@ -323,7 +323,7 @@
     "name": "French Fries",
     "calories": 1.5,
     "proteins": 0.023399999999999997,
-    "fat": 0.0499,
+    "fats": 0.0499,
     "carbohydrates": 0.2396,
     "serving": 100
   },
@@ -331,7 +331,7 @@
     "name": "French Onion Soup",
     "calories": 0.4,
     "proteins": 0.011000000000000001,
-    "fat": 0.001,
+    "fats": 0.001,
     "carbohydrates": 0.0934,
     "serving": 100
   },
@@ -339,7 +339,7 @@
     "name": "French Toast",
     "calories": 2.13,
     "proteins": 0.07400000000000001,
-    "fat": 0.061,
+    "fats": 0.061,
     "carbohydrates": 0.321,
     "serving": 100
   },
@@ -347,7 +347,7 @@
     "name": "Fried Calamari",
     "calories": 0.92,
     "proteins": 0.1558,
-    "fat": 0.0138,
+    "fats": 0.0138,
     "carbohydrates": 0.0308,
     "serving": 100
   },
@@ -355,7 +355,7 @@
     "name": "Fried Rice",
     "calories": 3.6,
     "proteins": 0.0661,
-    "fat": 0.0058,
+    "fats": 0.0058,
     "carbohydrates": 0.7934,
     "serving": 100
   },
@@ -363,7 +363,7 @@
     "name": "Frozen Yogurt",
     "calories": 0.61,
     "proteins": 0.0347,
-    "fat": 0.0325,
+    "fats": 0.0325,
     "carbohydrates": 0.0466,
     "serving": 100
   },
@@ -371,7 +371,7 @@
     "name": "Garlic Bread",
     "calories": 3.5,
     "proteins": 0.0836,
-    "fat": 0.1661,
+    "fats": 0.1661,
     "carbohydrates": 0.4172,
     "serving": 100
   },
@@ -379,7 +379,7 @@
     "name": "Gnocchi",
     "calories": 3.71,
     "proteins": 0.1304,
-    "fat": 0.0151,
+    "fats": 0.0151,
     "carbohydrates": 0.7467,
     "serving": 100
   },
@@ -387,7 +387,7 @@
     "name": "Greek Salad",
     "calories": 0.9069875355444608,
     "proteins": 0.02480950272921507,
-    "fat": 0.07176052324712448,
+    "fats": 0.07176052324712448,
     "carbohydrates": 0.049883500088906116,
     "serving": 100
   },
@@ -395,7 +395,7 @@
     "name": "Grilled Cheese Sandwich",
     "calories": 4.06,
     "proteins": 0.2404,
-    "fat": 0.3382,
+    "fats": 0.3382,
     "carbohydrates": 0.013300000000000001,
     "serving": 100
   },
@@ -403,7 +403,7 @@
     "name": "Grilled Salmon",
     "calories": 2.08,
     "proteins": 0.20420000000000002,
-    "fat": 0.13419999999999999,
+    "fats": 0.13419999999999999,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -411,7 +411,7 @@
     "name": "Guacamole",
     "calories": 2.0,
     "proteins": 0.03333333333333333,
-    "fat": 0.2,
+    "fats": 0.2,
     "carbohydrates": 0.06666666666666667,
     "serving": 100
   },
@@ -419,7 +419,7 @@
     "name": "Gyoza",
     "calories": 2.048894400207958,
     "proteins": 0.08733432891720273,
-    "fat": 0.0598607423352779,
+    "fats": 0.0598607423352779,
     "carbohydrates": 0.28161312861515597,
     "serving": 100
   },
@@ -427,7 +427,7 @@
     "name": "Hamburger",
     "calories": 2.54,
     "proteins": 0.17170000000000002,
-    "fat": 0.2,
+    "fats": 0.2,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -435,7 +435,7 @@
     "name": "Hot And Sour Soup",
     "calories": 0.3086471670588286,
     "proteins": 0.013227735731092656,
-    "fat": 0.011023113109243879,
+    "fats": 0.011023113109243879,
     "carbohydrates": 0.035273961949580414,
     "serving": 100
   },
@@ -443,7 +443,7 @@
     "name": "Hot Dog",
     "calories": 3.05,
     "proteins": 0.1153,
-    "fat": 0.2764,
+    "fats": 0.2764,
     "carbohydrates": 0.0172,
     "serving": 100
   },
@@ -451,7 +451,7 @@
     "name": "Huevos Rancheros",
     "calories": 1.3220970665214624,
     "proteins": 0.05849510777308801,
-    "fat": 0.07519950130336517,
+    "fats": 0.07519950130336517,
     "carbohydrates": 0.11115523195874717,
     "serving": 100
   },
@@ -459,7 +459,7 @@
     "name": "Hummus",
     "calories": 1.66,
     "proteins": 0.079,
-    "fat": 0.096,
+    "fats": 0.096,
     "carbohydrates": 0.1429,
     "serving": 100
   },
@@ -467,7 +467,7 @@
     "name": "Ice Cream",
     "calories": 2.07,
     "proteins": 0.035,
-    "fat": 0.11,
+    "fats": 0.11,
     "carbohydrates": 0.23600000000000002,
     "serving": 100
   },
@@ -475,7 +475,7 @@
     "name": "Lasagna",
     "calories": 1.24,
     "proteins": 0.0663,
-    "fat": 0.044199999999999996,
+    "fats": 0.044199999999999996,
     "carbohydrates": 0.1439,
     "serving": 100
   },
@@ -483,7 +483,7 @@
     "name": "Lobster Bisque",
     "calories": 0.77,
     "proteins": 0.16519999999999999,
-    "fat": 0.0075,
+    "fats": 0.0075,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -491,7 +491,7 @@
     "name": "Lobster Roll Sandwich",
     "calories": 2.93,
     "proteins": 0.099,
-    "fat": 0.043,
+    "fats": 0.043,
     "carbohydrates": 0.527,
     "serving": 100
   },
@@ -499,7 +499,7 @@
     "name": "Macaroni And Cheese",
     "calories": 1.49,
     "proteins": 0.055999999999999994,
-    "fat": 0.0641,
+    "fats": 0.0641,
     "carbohydrates": 0.1728,
     "serving": 100
   },
@@ -507,7 +507,7 @@
     "name": "Macarons",
     "calories": 4.6,
     "proteins": 0.0302,
-    "fat": 0.2255,
+    "fats": 0.2255,
     "carbohydrates": 0.6122,
     "serving": 100
   },
@@ -515,7 +515,7 @@
     "name": "Miso Soup",
     "calories": 1.99,
     "proteins": 0.11689999999999999,
-    "fat": 0.0601,
+    "fats": 0.0601,
     "carbohydrates": 0.2647,
     "serving": 100
   },
@@ -523,7 +523,7 @@
     "name": "Mussels",
     "calories": 0.86,
     "proteins": 0.11900000000000001,
-    "fat": 0.022400000000000003,
+    "fats": 0.022400000000000003,
     "carbohydrates": 0.0369,
     "serving": 100
   },
@@ -531,7 +531,7 @@
     "name": "Nachos",
     "calories": 1.976714425393555,
     "proteins": 0.07575425324023877,
-    "fat": 0.11894447802620116,
+    "fats": 0.11894447802620116,
     "carbohydrates": 0.1607025446662475,
     "serving": 100
   },
@@ -539,7 +539,7 @@
     "name": "Omelette",
     "calories": 1.6109215518902573,
     "proteins": 0.08971132584815666,
-    "fat": 0.12416607878443019,
+    "fats": 0.12416607878443019,
     "carbohydrates": 0.03322285530364062,
     "serving": 100
   },
@@ -547,7 +547,7 @@
     "name": "Onion Rings",
     "calories": 4.11,
     "proteins": 0.038599999999999995,
-    "fat": 0.2523,
+    "fats": 0.2523,
     "carbohydrates": 0.43579999999999997,
     "serving": 100
   },
@@ -555,7 +555,7 @@
     "name": "Oysters",
     "calories": 0.81,
     "proteins": 0.09449999999999999,
-    "fat": 0.023,
+    "fats": 0.023,
     "carbohydrates": 0.0495,
     "serving": 100
   },
@@ -563,7 +563,7 @@
     "name": "Pad Thai",
     "calories": 1.77269687943892,
     "proteins": 0.07592127061060547,
-    "fat": 0.07005324086618406,
+    "fats": 0.07005324086618406,
     "carbohydrates": 0.2152710562864918,
     "serving": 100
   },
@@ -571,7 +571,7 @@
     "name": "Paella",
     "calories": 1.3023006796327656,
     "proteins": 0.07953789660558566,
-    "fat": 0.05362040872911113,
+    "fats": 0.05362040872911113,
     "carbohydrates": 0.11848659911816693,
     "serving": 100
   },
@@ -579,7 +579,7 @@
     "name": "Pancakes",
     "calories": 2.27,
     "proteins": 0.064,
-    "fat": 0.09699999999999999,
+    "fats": 0.09699999999999999,
     "carbohydrates": 0.28300000000000003,
     "serving": 100
   },
@@ -587,7 +587,7 @@
     "name": "Panna Cotta",
     "calories": 2.3579382720933335,
     "proteins": 0.03138991234298683,
-    "fat": 0.18909049991794627,
+    "fats": 0.18909049991794627,
     "carbohydrates": 0.1423116325112118,
     "serving": 100
   },
@@ -595,7 +595,7 @@
     "name": "Peking Duck",
     "calories": 3.37,
     "proteins": 0.18989999999999999,
-    "fat": 0.28350000000000003,
+    "fats": 0.28350000000000003,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -603,7 +603,7 @@
     "name": "Pho",
     "calories": 0.9198383202652914,
     "proteins": 0.07007617759250137,
-    "fat": 0.030839196338539595,
+    "fats": 0.030839196338539595,
     "carbohydrates": 0.08653452232124872,
     "serving": 100
   },
@@ -611,7 +611,7 @@
     "name": "Pizza",
     "calories": 2.68,
     "proteins": 0.1036,
-    "fat": 0.12279999999999999,
+    "fats": 0.12279999999999999,
     "carbohydrates": 0.2902,
     "serving": 100
   },
@@ -619,7 +619,7 @@
     "name": "Pork Chop",
     "calories": 1.7,
     "proteins": 0.2071,
-    "fat": 0.09029999999999999,
+    "fats": 0.09029999999999999,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -627,7 +627,7 @@
     "name": "Poutine",
     "calories": 1.279344546742641,
     "proteins": 0.04282950944219646,
-    "fat": 0.077165582574777,
+    "fats": 0.077165582574777,
     "carbohydrates": 0.10770961803136203,
     "serving": 100
   },
@@ -635,7 +635,7 @@
     "name": "Prime Rib",
     "calories": 3.55,
     "proteins": 0.16149999999999998,
-    "fat": 0.3166,
+    "fats": 0.3166,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -643,7 +643,7 @@
     "name": "Pulled Pork Sandwich",
     "calories": 1.98,
     "proteins": 0.1974,
-    "fat": 0.1258,
+    "fats": 0.1258,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -651,7 +651,7 @@
     "name": "Ramen",
     "calories": 4.4,
     "proteins": 0.1017,
-    "fat": 0.1759,
+    "fats": 0.1759,
     "carbohydrates": 0.6026,
     "serving": 100
   },
@@ -659,7 +659,7 @@
     "name": "Ravioli",
     "calories": 3.07,
     "proteins": 0.135,
-    "fat": 0.0723,
+    "fats": 0.0723,
     "carbohydrates": 0.47,
     "serving": 100
   },
@@ -667,7 +667,7 @@
     "name": "Red Velvet Cake",
     "calories": 3.73,
     "proteins": 0.16950000762939454,
-    "fat": 0.025399999618530275,
+    "fats": 0.025399999618530275,
     "carbohydrates": 0.7119000244140625,
     "serving": 100
   },
@@ -675,7 +675,7 @@
     "name": "Risotto",
     "calories": 1.2749093379746033,
     "proteins": 0.04130957930325261,
-    "fat": 0.04693717207822008,
+    "fats": 0.04693717207822008,
     "carbohydrates": 0.15983446792844344,
     "serving": 100
   },
@@ -683,7 +683,7 @@
     "name": "Samosa",
     "calories": 1.9580921525737276,
     "proteins": 0.041102279452567524,
-    "fat": 0.10356362592558935,
+    "fats": 0.10356362592558935,
     "carbohydrates": 0.222711431192653,
     "serving": 100
   },
@@ -691,7 +691,7 @@
     "name": "Sashimi",
     "calories": 0.9798323023339254,
     "proteins": 0.23515975256014207,
-    "fat": 0.009798323023339254,
+    "fats": 0.009798323023339254,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -699,7 +699,7 @@
     "name": "Scallops",
     "calories": 0.69,
     "proteins": 0.1206,
-    "fat": 0.0049,
+    "fats": 0.0049,
     "carbohydrates": 0.0318,
     "serving": 100
   },
@@ -707,7 +707,7 @@
     "name": "Seaweed Salad",
     "calories": 0.35,
     "proteins": 0.0581,
-    "fat": 0.0028000000000000004,
+    "fats": 0.0028000000000000004,
     "carbohydrates": 0.051100000000000007,
     "serving": 100
   },
@@ -715,7 +715,7 @@
     "name": "Shrimp And Grits",
     "calories": 0.71,
     "proteins": 0.1361,
-    "fat": 0.0101,
+    "fats": 0.0101,
     "carbohydrates": 0.0091,
     "serving": 100
   },
@@ -723,7 +723,7 @@
     "name": "Spaghetti Bolognese",
     "calories": 3.71,
     "proteins": 0.1304,
-    "fat": 0.0151,
+    "fats": 0.0151,
     "carbohydrates": 0.7467,
     "serving": 100
   },
@@ -731,7 +731,7 @@
     "name": "Spaghetti Carbonara",
     "calories": 3.71,
     "proteins": 0.1304,
-    "fat": 0.0151,
+    "fats": 0.0151,
     "carbohydrates": 0.7467,
     "serving": 100
   },
@@ -739,7 +739,7 @@
     "name": "Spring Rolls",
     "calories": 2.93,
     "proteins": 0.099,
-    "fat": 0.043,
+    "fats": 0.043,
     "carbohydrates": 0.527,
     "serving": 100
   },
@@ -747,7 +747,7 @@
     "name": "Steak",
     "calories": 2.28,
     "proteins": 0.2,
-    "fat": 0.1583,
+    "fats": 0.1583,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -755,7 +755,7 @@
     "name": "Strawberry Shortcake",
     "calories": 3.46,
     "proteins": 0.061,
-    "fat": 0.142,
+    "fats": 0.142,
     "carbohydrates": 0.485,
     "serving": 100
   },
@@ -763,7 +763,7 @@
     "name": "Sushi",
     "calories": 1.2696415332408688,
     "proteins": 0.04177344184499013,
-    "fat": 0.027546050573957665,
+    "fats": 0.027546050573957665,
     "carbohydrates": 0.20901429828405518,
     "serving": 100
   },
@@ -771,7 +771,7 @@
     "name": "Tacos",
     "calories": 4.76,
     "proteins": 0.0641,
-    "fat": 0.21789999999999998,
+    "fats": 0.21789999999999998,
     "carbohydrates": 0.6349,
     "serving": 100
   },
@@ -779,7 +779,7 @@
     "name": "Takoyaki",
     "calories": 1.0982281609291906,
     "proteins": 0.04211999014215168,
-    "fat": 0.030215884079559763,
+    "fats": 0.030215884079559763,
     "carbohydrates": 0.16113796289354082,
     "serving": 100
   },
@@ -787,7 +787,7 @@
     "name": "Tiramisu",
     "calories": 2.657201440112554,
     "proteins": 0.049883576235930205,
-    "fat": 0.16294709800110474,
+    "fats": 0.16294709800110474,
     "carbohydrates": 0.24331984922743588,
     "serving": 100
   },
@@ -795,7 +795,7 @@
     "name": "Tuna Tartare",
     "calories": 1.09,
     "proteins": 0.244,
-    "fat": 0.0049,
+    "fats": 0.0049,
     "carbohydrates": 0.0,
     "serving": 100
   },
@@ -803,7 +803,7 @@
     "name": "Waffles",
     "calories": 2.91,
     "proteins": 0.079,
-    "fat": 0.141,
+    "fats": 0.141,
     "carbohydrates": 0.32899999999999996,
     "serving": 100
   }

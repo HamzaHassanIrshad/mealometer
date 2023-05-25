@@ -9,11 +9,17 @@ import logo from "./images/logo.png";
 import "./App.css";
 
 export default class App extends Component {
-  state = {};
+  state = {
+    foodEntries: [],
+  };
   updateNutrients = (selectedFoods$) => {
     this.setState({
       macroNutrients: calculateMacroNutrients(selectedFoods$),
     });
+  };
+
+  updateFoodEntries = (newFoodEntries) => {
+    this.setState({ foodEntries: newFoodEntries });
   };
 
   render() {
@@ -23,11 +29,14 @@ export default class App extends Component {
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
-          <Foods updateNutrients={this.updateNutrients} />
+          <Foods
+            updateNutrients={this.updateNutrients}
+            updateFoodEntries={this.updateFoodEntries}
+          />
         </div>
         <div className="rightPanel">
           <MacroNutrients macroNutrients={this.state.macroNutrients} />
-          <NutrientTable />
+          <NutrientTable foodEntries={this.state.foodEntries} />
         </div>
       </div>
     );

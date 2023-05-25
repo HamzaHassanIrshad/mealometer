@@ -5,8 +5,9 @@ import { Icon } from "antd";
 import update from "immutability-helper";
 import foods from "./../../data/food_data.json";
 import { from } from "rxjs";
+import { createData } from "../nutrient-table";
 
-const Foods = ({ updateNutrients }) => {
+const Foods = ({ updateNutrients, updateFoodEntries }) => {
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [foodsForSelection, setFoodsForSelection] = useState([]);
   const [error, setError] = useState(false);
@@ -49,10 +50,6 @@ const Foods = ({ updateNutrients }) => {
     });
     setSelectedFoods(updatedSelectedFoods);
   };
-
-  useEffect(() => {
-    setFoodsForSelection(foods.map((food) => food.name));
-  }, []);
 
   useEffect(() => {
     const updateFoodSelector = () => {
@@ -100,6 +97,20 @@ const Foods = ({ updateNutrients }) => {
         <button
           className="reusable-button"
           style={{ marginBottom: "15px", marginTop: "2px" }}
+          onClick={() => {
+            // Create a new food entry based on the selected foods
+            const newFoodEntry = selectedFoods.map((selectedFood) => {
+              const { name, calories, proteins, carbs, fats } =
+                selectedFood.food;
+              return createData(name, calories, proteins, carbs, fats);
+            });
+
+            // Call the updateFoodEntries prop with the new food entries
+            updateFoodEntries(newFoodEntry);
+
+            // Clear the selected foods array
+            setSelectedFoods([]);
+          }}
         >
           Add Food Entry
         </button>

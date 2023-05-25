@@ -14,13 +14,11 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, proteins, carbs, fats) {
+export const createData = (name, calories, proteins, carbs, fats) => {
   return { name, calories, proteins, carbs, fats };
-}
+};
 
-const rows = [createData("Apple Pie", 265, 2.4, 37.1, 12.5)];
-
-const NutrientTable = () => {
+const NutrientTable = ({ foodEntries }) => {
   const classes = useStyles();
 
   return (
@@ -36,8 +34,8 @@ const NutrientTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          {foodEntries.map((row, index) => (
+            <TableRow key={index}>
               <TableCell align="left" component="th" scope="row">
                 {row.name}
               </TableCell>

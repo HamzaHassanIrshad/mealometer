@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import FoodSelector from "./../food-selector";
 import SelectedFood from "./../selected-food";
 import { Icon } from "antd";
@@ -11,6 +11,7 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [foodsForSelection, setFoodsForSelection] = useState([]);
   const [error, setError] = useState(false);
+  const memoizedUpdateNutrients = useCallback(updateNutrients, []);
 
   const onFoodSelect = (selectedFoodName) => {
     // Check if the selected food item is already in the selectedFoods array
@@ -61,9 +62,9 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
     };
 
     setFoodsForSelection(foods.map((food) => food.name));
-    updateNutrients(from(selectedFoods));
+    memoizedUpdateNutrients(from(selectedFoods));
     updateFoodSelector();
-  }, [selectedFoods, updateNutrients]);
+  }, [selectedFoods, memoizedUpdateNutrients]);
 
   return (
     <div>

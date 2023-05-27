@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import MacroNutrients from "./components/macro-nutrients";
 import NutrientTable from "./components/nutrient-table";
 import Foods from "./components/foods";
@@ -8,37 +8,35 @@ import logo from "./images/logo.png";
 // Styles
 import "./App.css";
 
-export default class App extends Component {
-  state = {
-    foodEntries: [],
-  };
-  updateNutrients = (selectedFoods$) => {
-    this.setState({
-      macroNutrients: calculateMacroNutrients(selectedFoods$),
-    });
+const App = () => {
+  const [foodEntries, setFoodEntries] = useState([]);
+  const [macroNutrients, setMacroNutrients] = useState(null);
+
+  const updateNutrients = (selectedFoods) => {
+    setMacroNutrients(calculateMacroNutrients(selectedFoods));
   };
 
-  updateFoodEntries = (newFoodEntries) => {
-    this.setState({ foodEntries: newFoodEntries });
+  const updateFoodEntries = (newFoodEntries) => {
+    setFoodEntries(newFoodEntries);
   };
 
-  render() {
-    return (
-      <div className="App">
-        <div className="leftPanel">
-          <div className="logo">
-            <img src={logo} alt="logo" />
-          </div>
-          <Foods
-            updateNutrients={this.updateNutrients}
-            updateFoodEntries={this.updateFoodEntries}
-          />
+  return (
+    <div className="App">
+      <div className="leftPanel">
+        <div className="logo">
+          <img src={logo} alt="logo" />
         </div>
-        <div className="rightPanel">
-          <MacroNutrients macroNutrients={this.state.macroNutrients} />
-          <NutrientTable foodEntries={this.state.foodEntries} />
-        </div>
+        <Foods
+          updateNutrients={updateNutrients}
+          updateFoodEntries={updateFoodEntries}
+        />
       </div>
-    );
-  }
-}
+      <div className="rightPanel">
+        <MacroNutrients macroNutrients={macroNutrients} />
+        <NutrientTable foodEntries={foodEntries} />
+      </div>
+    </div>
+  );
+};
+
+export default App;

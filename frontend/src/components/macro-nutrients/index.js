@@ -7,7 +7,9 @@ import MacroNutrient from "../macro-nutrient";
 const MacroNutrients = ({
   macroNutrients: initialMacroNutrients = defaultMacroNutrients,
 }) => {
-  const macroNutrients = Object.values(initialMacroNutrients);
+  const macroNutrients = initialMacroNutrients
+    ? Object.values(initialMacroNutrients)
+    : [];
 
   return (
     <div className="macroNutrients">
@@ -19,11 +21,13 @@ const MacroNutrients = ({
           units={macroNutrient.unit}
         />
       ))}
-      <MacroPieChart
-        proteins={initialMacroNutrients.proteins.amount}
-        carbohydrates={initialMacroNutrients.carbs.amount}
-        fats={initialMacroNutrients.fats.amount}
-      />
+      {initialMacroNutrients && (
+        <MacroPieChart
+          proteins={initialMacroNutrients.proteins?.amount}
+          carbohydrates={initialMacroNutrients.carbs?.amount}
+          fats={initialMacroNutrients.fats?.amount}
+        />
+      )}
     </div>
   );
 };

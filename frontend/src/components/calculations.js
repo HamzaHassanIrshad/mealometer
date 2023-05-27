@@ -50,7 +50,7 @@ export const calculateMacroNutrients = (selectedFoods$) => {
       selectedFood.amount = selectedFood.amount || 0; // Set the amount to 0 if it is undefined
       calories += selectedFood.food.calories * selectedFood.amount; // Calculate the total calories
       proteins += selectedFood.food.proteins * selectedFood.amount; // Calculate the total proteins
-      carbs += selectedFood.food.carbohydrates * selectedFood.amount; // Calculate the total carbs
+      carbs += selectedFood.food.carbs * selectedFood.amount; // Calculate the total carbs
       fats += selectedFood.food.fats * selectedFood.amount; // Calculate the total fats
     },
     (err) => console.error(err),

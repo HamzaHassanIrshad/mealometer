@@ -79,11 +79,13 @@ const App = () => {
           foodEntries={foodEntries.Breakfast}
           onDelete={(index) => handleDelete(index, "Breakfast")}
         />
+        <div className="nutrientTableSpacer" />
         <NutrientTable
           meal="Lunch"
           foodEntries={foodEntries.Lunch}
           onDelete={(index) => handleDelete(index, "Lunch")}
         />
+        <div className="nutrientTableSpacer" />
         <NutrientTable
           meal="Dinner"
           foodEntries={foodEntries.Dinner}

@@ -309,3 +309,7 @@ input[type="number"] {
   font-size: 15px;
   text-transform: capitalize;
 }
+
+.nutrientTableSpacer {
+  margin-bottom: 25px;
+}

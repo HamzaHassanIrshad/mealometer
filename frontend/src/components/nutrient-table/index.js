@@ -43,36 +43,39 @@ export const createData = (name, amount, calories, proteins, carbs, fats) => {
   };
 };
 
-const NutrientTable = ({ foodEntries }) => {
+const NutrientTable = ({ meal, foodEntries }) => {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="left">Food</TableCell>
-            <TableCell align="center">Calories&nbsp;(kcal)</TableCell>
-            <TableCell align="center">Proteins&nbsp;(g)</TableCell>
-            <TableCell align="center">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="center">Fats&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {foodEntries.map((row, index) => (
-            <TableRow key={index}>
-              <TableCell align="left" component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
-              <TableCell align="center">{row.proteins}</TableCell>
-              <TableCell align="center">{row.carbs}</TableCell>
-              <TableCell align="center">{row.fats}</TableCell>
+    <div style={{ margin: "0 10px 10px 0" }}>
+      <h3 className="tableLabel">{meal}</h3>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">Food</TableCell>
+              <TableCell align="center">Calories&nbsp;(kcal)</TableCell>
+              <TableCell align="center">Proteins&nbsp;(g)</TableCell>
+              <TableCell align="center">Carbs&nbsp;(g)</TableCell>
+              <TableCell align="center">Fats&nbsp;(g)</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {foodEntries.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell align="left" component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="center">{row.calories}</TableCell>
+                <TableCell align="center">{row.proteins}</TableCell>
+                <TableCell align="center">{row.carbs}</TableCell>
+                <TableCell align="center">{row.fats}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 

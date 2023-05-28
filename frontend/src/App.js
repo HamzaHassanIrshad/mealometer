@@ -9,15 +9,23 @@ import logo from "./images/logo.png";
 import "./App.css";
 
 const App = () => {
-  const [foodEntries, setFoodEntries] = useState([]);
+  const [foodEntries, setFoodEntries] = useState({
+    Breakfast: [],
+    Lunch: [],
+    Dinner: [],
+  });
+
   const [macroNutrients, setMacroNutrients] = useState(null);
 
   const updateNutrients = (selectedFoods) => {
     setMacroNutrients(calculateMacroNutrients(selectedFoods));
   };
 
-  const updateFoodEntries = (newFoodEntries) => {
-    setFoodEntries(newFoodEntries);
+  const updateFoodEntries = (newFoodEntry, meal) => {
+    setFoodEntries((prevFoodEntries) => ({
+      ...prevFoodEntries,
+      [meal]: [...prevFoodEntries[meal], ...newFoodEntry],
+    }));
   };
 
   return (
@@ -29,11 +37,14 @@ const App = () => {
         <Foods
           updateNutrients={updateNutrients}
           updateFoodEntries={updateFoodEntries}
+          foodEntries={foodEntries}
         />
       </div>
       <div className="rightPanel">
         <MacroNutrients macroNutrients={macroNutrients} />
-        <NutrientTable foodEntries={foodEntries} />
+        <NutrientTable meal="Breakfast" foodEntries={foodEntries.Breakfast} />
+        <NutrientTable meal="Lunch" foodEntries={foodEntries.Lunch} />
+        <NutrientTable meal="Dinner" foodEntries={foodEntries.Dinner} />
       </div>
     </div>
   );

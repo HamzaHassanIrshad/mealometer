@@ -13,6 +13,17 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
   const [error, setError] = useState(false);
   const memoizedUpdateNutrients = useCallback(updateNutrients, []);
 
+  const addFoodEntry = (meal) => {
+    // Create a new food entry based on the selected foods
+    const newFoodEntry = selectedFoods.map((selectedFood) => {
+      const { name, calories, proteins, carbs, fats } = selectedFood.food;
+      const { amount } = selectedFood;
+      return createData(name, amount, calories, proteins, carbs, fats);
+    });
+    updateFoodEntries(newFoodEntry, meal);
+    setSelectedFoods([]);
+  };
+
   const onFoodSelect = (selectedFoodName) => {
     // Check if the selected food item is already in the selectedFoods array
     const existingFood = selectedFoods.find(
@@ -94,28 +105,36 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
           onRemove={onFoodRemove}
         />
       ))}
+      {/* Add Food Entry */}
       {selectedFoods.length > 0 && (
-        <button
-          className="reusable-button"
-          style={{ marginBottom: "15px", marginTop: "2px" }}
-          onClick={() => {
-            // Create a new food entry based on the selected foods
-            const newFoodEntry = selectedFoods.map((selectedFood) => {
-              const { name, calories, proteins, carbs, fats } =
-                selectedFood.food;
-              const { amount } = selectedFood;
-              return createData(name, amount, calories, proteins, carbs, fats);
-            });
-
-            // Call the updateFoodEntries prop with the new food entries
-            updateFoodEntries(newFoodEntry);
-
-            // Clear the selected foods array
-            setSelectedFoods([]);
+        <div
+          className="button-container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "5px",
           }}
         >
-          Add Food Entry
-        </button>
+          <button
+            className="reusable-button"
+            onClick={() => addFoodEntry("Breakfast")}
+          >
+            Add to Breakfast
+          </button>
+          <button
+            className="reusable-button"
+            onClick={() => addFoodEntry("Lunch")}
+          >
+            Add to Lunch
+          </button>
+          <button
+            className="reusable-button"
+            onClick={() => addFoodEntry("Dinner")}
+          >
+            Add to Dinner
+          </button>
+        </div>
       )}
     </div>
   );

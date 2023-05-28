@@ -292,3 +292,8 @@ input[type="number"] {
 .reusable-button:hover {
   background-color: #fd7e73;
 }
+
+.tableLabel {
+  text-transform: uppercase;
+  margin: 10px 0 10px 0;
+}

@@ -103,7 +103,8 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
             const newFoodEntry = selectedFoods.map((selectedFood) => {
               const { name, calories, proteins, carbs, fats } =
                 selectedFood.food;
-              return createData(name, calories, proteins, carbs, fats);
+              const { amount } = selectedFood;
+              return createData(name, amount, calories, proteins, carbs, fats);
             });
 
             // Call the updateFoodEntries prop with the new food entries

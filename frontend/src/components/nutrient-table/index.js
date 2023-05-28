@@ -11,11 +11,36 @@ import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
+    border: "1px solid #ddd",
+    "& th": {
+      border: "1px solid #ddd",
+      background: "#f2f2f2",
+      padding: "8px",
+      minWidth: "200px",
+    },
+    "& td": {
+      border: "1px solid #ddd",
+      padding: "8px",
+      minWidth: "100px",
+    },
   },
 });
 
-export const createData = (name, calories, proteins, carbs, fats) => {
-  return { name, calories, proteins, carbs, fats };
+export const createData = (name, amount, calories, proteins, carbs, fats) => {
+  const numericAmount = parseFloat(amount);
+  const updatedCalories = (calories * numericAmount).toFixed(2);
+  const updatedProteins = (proteins * numericAmount).toFixed(2);
+  const updatedCarbs = (carbs * numericAmount).toFixed(2);
+  const updatedFats = (fats * numericAmount).toFixed(2);
+
+  return {
+    name,
+    amount: numericAmount,
+    calories: parseFloat(updatedCalories),
+    proteins: parseFloat(updatedProteins),
+    carbs: parseFloat(updatedCarbs),
+    fats: parseFloat(updatedFats),
+  };
 };
 
 const NutrientTable = ({ foodEntries }) => {

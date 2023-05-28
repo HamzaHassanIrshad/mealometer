@@ -74,7 +74,6 @@ const App = () => {
           <b>Calorie Goal: {calorieGoal}</b>
           <b>Calories Remaining: {caloriesRemaining}</b>
         </div>
-
         <NutrientTable
           meal="Breakfast"
           foodEntries={foodEntries.Breakfast}

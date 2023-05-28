@@ -297,3 +297,15 @@ input[type="number"] {
   text-transform: uppercase;
   margin: 10px 0 10px 0;
 }
+
+.calorieGoal {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.calorieGoal b {
+  font-size: 15px;
+  text-transform: capitalize;
+}

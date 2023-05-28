@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MacroNutrients from "./components/macro-nutrients";
 import NutrientTable from "./components/nutrient-table";
 import Foods from "./components/foods";
@@ -16,6 +16,7 @@ const App = () => {
   });
 
   const [macroNutrients, setMacroNutrients] = useState(null);
+  const [calorieGoal, setCalorieGoal] = useState(3000);
 
   const updateNutrients = (selectedFoods) => {
     setMacroNutrients(calculateMacroNutrients(selectedFoods));
@@ -36,6 +37,25 @@ const App = () => {
     });
   };
 
+  const calculateTotalCalories = () => {
+    let totalCalories = 0;
+
+    Object.keys(foodEntries).forEach((meal) => {
+      const mealEntries = foodEntries[meal];
+      mealEntries.forEach((entry) => {
+        totalCalories += entry.calories;
+      });
+    });
+
+    return totalCalories.toFixed(2);
+  };
+
+  const caloriesRemaining = (calorieGoal - calculateTotalCalories()).toFixed(2);
+
+  useEffect(() => {
+    // Update the calorie goal whenever it changes
+  }, [calorieGoal]);
+
   return (
     <div className="App">
       <div className="leftPanel">
@@ -50,6 +70,10 @@ const App = () => {
       </div>
       <div className="rightPanel">
         <MacroNutrients macroNutrients={macroNutrients} />
+        <div className="calorieGoal">
+          <b>Calorie Goal: {calorieGoal}</b>
+          <b>Calories Remaining: {caloriesRemaining}</b>
+        </div>
         <NutrientTable
           meal="Breakfast"
           foodEntries={foodEntries.Breakfast}

@@ -63,6 +63,30 @@ const NutrientTable = ({ meal, foodEntries, onDelete }) => {
     onDelete(index);
   };
 
+  const calculateTotal = () => {
+    let totalCalories = 0;
+    let totalProteins = 0;
+    let totalCarbs = 0;
+    let totalFats = 0;
+
+    for (let i = 0; i < foodEntries.length; i++) {
+      const entry = foodEntries[i];
+      totalCalories += entry.calories;
+      totalProteins += entry.proteins;
+      totalCarbs += entry.carbs;
+      totalFats += entry.fats;
+    }
+
+    return {
+      totalCalories: totalCalories.toFixed(2),
+      totalProteins: totalProteins.toFixed(2),
+      totalCarbs: totalCarbs.toFixed(2),
+      totalFats: totalFats.toFixed(2),
+    };
+  };
+
+  const totalValues = calculateTotal();
+
   return (
     <div style={{ margin: "0 10px 10px 0" }}>
       <h3 className="tableLabel">{meal}</h3>
@@ -70,11 +94,21 @@ const NutrientTable = ({ meal, foodEntries, onDelete }) => {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Food</TableCell>
-              <TableCell align="center">Calories&nbsp;(kcal)</TableCell>
-              <TableCell align="center">Proteins&nbsp;(g)</TableCell>
-              <TableCell align="center">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="center">Fats&nbsp;(g)</TableCell>
+              <TableCell align="left">
+                <b>Food</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Calories&nbsp;(kcal)</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Proteins&nbsp;(g)</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Carbs&nbsp;(g)</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Fats&nbsp;(g)</b>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -88,20 +122,40 @@ const NutrientTable = ({ meal, foodEntries, onDelete }) => {
               foodEntries.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell align="left" component="th" scope="row">
-                    {row.name}
+                    {row.name} ({row.amount}g)
                   </TableCell>
                   <TableCell align="center">{row.calories}</TableCell>
                   <TableCell align="center">{row.proteins}</TableCell>
                   <TableCell align="center">{row.carbs}</TableCell>
                   <TableCell align="center">
                     {row.fats}
-                    <Button onClick={onDelete} className="deleteButton">
-                      <Icon type="delete" onClick={() => handleDelete(index)} />
+                    <Button
+                      onClick={() => handleDelete(index)}
+                      className="deleteButton"
+                    >
+                      <Icon type="delete" />
                     </Button>
                   </TableCell>
                 </TableRow>
               ))
             )}
+            <TableRow>
+              <TableCell align="left" colSpan={1}>
+                <b>Totals</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>{totalValues.totalCalories}</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>{totalValues.totalProteins}</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>{totalValues.totalCarbs}</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>{totalValues.totalFats}</b>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>

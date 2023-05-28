@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { Button, Icon } from "antd";
 
 const useStyles = makeStyles({
   table: {
@@ -22,6 +23,18 @@ const useStyles = makeStyles({
       border: "1px solid #ddd",
       padding: "8px",
       minWidth: "100px",
+      position: "relative",
+    },
+    "& .deleteButton": {
+      position: "absolute",
+      top: "50%",
+      right: "5px",
+      transform: "translateY(-50%)",
+      cursor: "pointer",
+    },
+    "& .emptyRow": {
+      textAlign: "center",
+      fontStyle: "italic",
     },
   },
 });
@@ -43,8 +56,12 @@ export const createData = (name, amount, calories, proteins, carbs, fats) => {
   };
 };
 
-const NutrientTable = ({ meal, foodEntries }) => {
+const NutrientTable = ({ meal, foodEntries, onDelete }) => {
   const classes = useStyles();
+
+  const handleDelete = (index) => {
+    onDelete(index);
+  };
 
   return (
     <div style={{ margin: "0 10px 10px 0" }}>
@@ -61,17 +78,30 @@ const NutrientTable = ({ meal, foodEntries }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {foodEntries.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell align="left" component="th" scope="row">
-                  {row.name}
+            {foodEntries.length === 0 ? (
+              <TableRow>
+                <TableCell className="emptyRow" colSpan={5}>
+                  No food entries have been made
                 </TableCell>
-                <TableCell align="center">{row.calories}</TableCell>
-                <TableCell align="center">{row.proteins}</TableCell>
-                <TableCell align="center">{row.carbs}</TableCell>
-                <TableCell align="center">{row.fats}</TableCell>
               </TableRow>
-            ))}
+            ) : (
+              foodEntries.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell align="left" component="th" scope="row">
+                    {row.name}
+                  </TableCell>
+                  <TableCell align="center">{row.calories}</TableCell>
+                  <TableCell align="center">{row.proteins}</TableCell>
+                  <TableCell align="center">{row.carbs}</TableCell>
+                  <TableCell align="center">
+                    {row.fats}
+                    <Button onClick={onDelete} className="deleteButton">
+                      <Icon type="delete" onClick={() => handleDelete(index)} />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
           </TableBody>
         </Table>
       </TableContainer>

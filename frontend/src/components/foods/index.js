@@ -118,18 +118,21 @@ const Foods = ({ updateNutrients, updateFoodEntries }) => {
         >
           <button
             className="reusable-button"
+            style={{ marginBottom: "15px", marginTop: "2px" }}
             onClick={() => addFoodEntry("Breakfast")}
           >
             Add to Breakfast
           </button>
           <button
             className="reusable-button"
+            style={{ marginBottom: "15px", marginTop: "2px" }}
             onClick={() => addFoodEntry("Lunch")}
           >
             Add to Lunch
           </button>
           <button
             className="reusable-button"
+            style={{ marginBottom: "15px", marginTop: "2px" }}
             onClick={() => addFoodEntry("Dinner")}
           >
             Add to Dinner

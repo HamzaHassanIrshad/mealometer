@@ -28,6 +28,14 @@ const App = () => {
     }));
   };
 
+  const handleDelete = (index, meal) => {
+    setFoodEntries((prevFoodEntries) => {
+      const updatedEntries = { ...prevFoodEntries };
+      updatedEntries[meal].splice(index, 1);
+      return updatedEntries;
+    });
+  };
+
   return (
     <div className="App">
       <div className="leftPanel">
@@ -42,9 +50,21 @@ const App = () => {
       </div>
       <div className="rightPanel">
         <MacroNutrients macroNutrients={macroNutrients} />
-        <NutrientTable meal="Breakfast" foodEntries={foodEntries.Breakfast} />
-        <NutrientTable meal="Lunch" foodEntries={foodEntries.Lunch} />
-        <NutrientTable meal="Dinner" foodEntries={foodEntries.Dinner} />
+        <NutrientTable
+          meal="Breakfast"
+          foodEntries={foodEntries.Breakfast}
+          onDelete={(index) => handleDelete(index, "Breakfast")}
+        />
+        <NutrientTable
+          meal="Lunch"
+          foodEntries={foodEntries.Lunch}
+          onDelete={(index) => handleDelete(index, "Lunch")}
+        />
+        <NutrientTable
+          meal="Dinner"
+          foodEntries={foodEntries.Dinner}
+          onDelete={(index) => handleDelete(index, "Dinner")}
+        />
       </div>
     </div>
   );

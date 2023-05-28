@@ -300,14 +300,16 @@ input[type="number"] {
 
 .calorieGoal {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  align-items: stretch;
+  justify-content: space-around;
+  margin: 0 10px 10px 0;
   text-align: left;
+  background-color: #f2f2f2;
+  padding: 10px;
 }
 
 .calorieGoal b {
-  font-size: 15px;
-  text-transform: capitalize;
+  font-size: 20px;
 }
 
 .nutrientTableSpacer {

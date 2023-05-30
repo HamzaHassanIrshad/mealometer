@@ -302,7 +302,7 @@ input[type="number"] {
   display: flex;
   align-items: stretch;
   justify-content: space-around;
-  margin: 0 10px 10px 0;
+  margin: 0 10px 0 0;
   text-align: left;
   background-color: #f2f2f2;
   padding: 10px;
@@ -313,5 +313,5 @@ input[type="number"] {
 }
 
 .nutrientTableSpacer {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }

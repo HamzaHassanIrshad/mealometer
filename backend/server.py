@@ -12,6 +12,9 @@ CORS(app)
 with open('./model/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+# Set the model to evaluation mode
+model.eval()
+
 # Load the class names
 with open('./data/classes.txt', 'r') as file:
     classes = [line.strip() for line in file.readlines()]
